@@ -1,0 +1,23 @@
+
+
+#page-wrap {
+     width: 40%;
+     margin:  auto;
+}
+
+
+
+/* Message flashing */
+
+.error {
+  background-color: #FBB0B0;
+  padding: 2%;
+  width: 33%;
+}
+
+.flashok {
+  background-color: #5CE68A;
+  padding: 2%;
+  width: 33%;
+}
+

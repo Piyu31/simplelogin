@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+    <head>
+    
+    <title>Welcome</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+
+
+<body >
+  <br><br>
+  <div class="container">
+    <nav class="navbar navbar-inverse ">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand " href="">Nexus USA</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="">Home</a></li>
+          <li><a href="">Services</a></li>
+          <li><a href="">About Us</a></li>
+          <li><a href="">Contact Us</a></li>
+        </ul>
+      </div>
+  </nav>
+</div>
+
+
+<div >
+<div class="card" >
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+      <div class="{{ category }}" style="text-align: center;margin-left: 9%;">{{ message }}</div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+<br><br>
+<div class="container" style="margin-top: 2%;margin-bottom: 15%;margin-left:40%;margin-right: 15%;">
+  <h1> WELCOME  </h1>
+<form  class="form-horizontal" method="POST" action="{{url_for('home')}}">
+     {{ form.hidden_tag() }}
+     <div class="form-group">{{ form.email.label }}:
+     {{ form.email(size=20) }} <br><br>
+     {{ form.password.label }}:
+     {{ form.password(size=20) }}<br><br>
+    <input class ="btn-success"type="submit" name="action" value="Login" width="140" >
+    <input class="btn-info" type="submit" name="action" value="Register" width="140" >
+  </div>
+    
+</form>
+</div>
+</div>
+</div>
+</body>
+
+
